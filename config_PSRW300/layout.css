@@ -1,0 +1,23 @@
+.buttonStyleHeaderContainer{
+    -fx-background-color: transparent;
+}
+.buttonStyleOptionsContainer{
+    -fx-background-color: transparent;
+}
+
+.buttonStyleRackContainer{
+    -fx-background-color: transparent;
+}
+
+.labelStyleOptionsContainer{
+    -fx-padding: 0 0 0 40;
+}
+.blockInput{
+    -fx-background-color:  #000087;
+}
+.blockLogic{
+    -fx-background-color:  green;
+}
+.blockOutput{
+    -fx-background-color: #1a1a65;
+}

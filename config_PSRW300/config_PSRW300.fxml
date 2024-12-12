@@ -1,0 +1,2244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?language groovy?>
+
+<Pane fx:id="display" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1505.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:script source="weg.groovy" />
+   <children>
+      <AnchorPane fx:id="headerContainer" prefHeight="100.0" prefWidth="1505.0" style="-fx-background-color: white; -fx-border-color: #005699; -fx-border-width: 0 0 2 0;">
+         <children>
+            <Label text=":LABEL_BUTTON_TITLE_HEADER_PSRW300" textFill="#005699" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+               <font>
+                  <Font name="Tahoma Bold" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="headerVersion" layoutX="10.0" layoutY="10.0" text="VERSION" textAlignment="RIGHT" textFill="#005699" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="8.0">
+               <font>
+                  <Font name="Tahoma Bold" size="23.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="32.0" fitWidth="44.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="7.0">
+               <image>
+                  <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/logoweg.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="boxButtonsHeader" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <Button fx:id="importButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;importAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="8.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/importButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_IMPORT_PSRW300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="exportButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;exportAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="56.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/exportButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_EXPORT_PSRW300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="settingsRackButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;settingsRackAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="104.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/rackButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_CONFIG_RACK_PSRW300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="startSimulateButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;startSimulateAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="152.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/playButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_START_SIMULATE_PSRW300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="finishSimulateButton" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;finishSimulateAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="200.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/stopButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_FINISH_SIMULATE_PSRW300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="zoomMinButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;zoomMinAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="248.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/zoomMinButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_ZOOM_MIN_PSRW_300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="zoomMaxButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;zoomMaxAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="296.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/zoomMaxButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_ZOOM_MAX_PSRW_300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="printButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;printAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="344.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/printButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_PRINT_DIAGRAM_PSRW_300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="restoreButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;restoreAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="392.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/restoreButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_RESTORE_DIAGRAM_PSRW_300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="resetButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;resetAction&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer" AnchorPane.leftAnchor="440.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia/images/headerContainer/iconButtons/resetButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_RESET_DIAGRAM_PSRW_300" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="workSpaceContainer" layoutY="100.0">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" hvalue="0.5" prefHeight="575.0" prefWidth="1505.0" vbarPolicy="NEVER" vvalue="0.5">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="575.0" prefWidth="1505.0" scaleX="0.7" scaleY="0.7">
+                     <children>
+                        <Button fx:id="buttonInputPSRW300" mnemonicParsing="false" onAction="call(event, &quot;openWorkSpacePSRW300BlockInput&quot;)" prefHeight="340.0" prefWidth="340.0" style="-fx-background-color: #202569;">
+                           <graphic>
+                              <AnchorPane style="-fx-background-color: transparent;">
+                                 <children>
+                                    <Label alignment="TOP_CENTER" prefHeight="310.0" prefWidth="320.0" text="PSRW300" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin01BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPIN02BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPIN02BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin04BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin05BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin06BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin07BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin08BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin09BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin10BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput01PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput02PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput03PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput04PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput05PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput06PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput07PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput08PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput09PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput10PSRW300" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="buttonInputSlot01" disable="true" layoutX="350.0" mnemonicParsing="false" onAction="call(event, &quot;openWorkSpaceSlot01BlockInput&quot;)" opacity="0.0" prefHeight="340.0" prefWidth="340.0" style="-fx-background-color: #202569;">
+                           <graphic>
+                              <AnchorPane style="-fx-background-color: transparent;">
+                                 <children>
+                                    <Label alignment="TOP_CENTER" prefHeight="310.0" prefWidth="320.0" text="Slot 01" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin01BlockInputPSRW3001" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPIN02BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPIN02BlockInputPSRW3001" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin04BlockInputPSRW3001" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin05BlockInputPSRW3001" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin06BlockInputPSRW3001" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin07BlockInputPSRW3001" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin08BlockInputPSRW3001" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin09BlockInputPSRW3001" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin10BlockInputPSRW3001" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput01PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput02PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput03PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput04PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput05PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput06PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput07PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput08PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput09PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput10PSRW3001" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="buttonInputSlot02" disable="true" layoutX="700.0" mnemonicParsing="false" onAction="call(event, &quot;openWorkSpaceSlot02BlockInput&quot;)" opacity="0.0" prefHeight="340.0" prefWidth="340.0" style="-fx-background-color: #202569;">
+                           <graphic>
+                              <AnchorPane style="-fx-background-color: transparent;">
+                                 <children>
+                                    <Label alignment="TOP_CENTER" prefHeight="310.0" prefWidth="320.0" text="Slot 02" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin01BlockInputPSRW3002" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPIN02BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPIN02BlockInputPSRW3002" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin04BlockInputPSRW3002" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin05BlockInputPSRW3002" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin06BlockInputPSRW3002" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin07BlockInputPSRW3002" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin08BlockInputPSRW3002" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin09BlockInputPSRW3002" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin10BlockInputPSRW3002" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput01PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput02PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput03PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput04PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput05PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput06PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput07PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput08PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput09PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput10PSRW3002" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="buttonInputSlot03" disable="true" layoutX="1051.0" mnemonicParsing="false" onAction="call(event, &quot;openWorkSpaceSlot03BlockInput&quot;)" opacity="0.0" prefHeight="340.0" prefWidth="340.0" style="-fx-background-color: #202569;">
+                           <graphic>
+                              <AnchorPane style="-fx-background-color: transparent;">
+                                 <children>
+                                    <Label alignment="TOP_CENTER" prefHeight="310.0" prefWidth="320.0" text="Slot 03" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin01BlockInputPSRW3003" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPIN02BlockInputPSRW300" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPIN02BlockInputPSRW3003" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin04BlockInputPSRW3003" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin05BlockInputPSRW3003" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin06BlockInputPSRW3003" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin07BlockInputPSRW3003" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin08BlockInputPSRW3003" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin09BlockInputPSRW3003" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelPin10BlockInputPSRW3003" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput01PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput02PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput03PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput04PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput05PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput06PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput07PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput08PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput09PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelBlockInput10PSRW3003" prefHeight="12.0" prefWidth="25.0" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="rackContainer" disable="true" opacity="0.0" prefWidth="244.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="labelConfigRack" alignment="CENTER" textFill="#005699" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Tahoma Bold" size="23.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="dinRailImage" fitWidth="576.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="buttonPSRW300PropertiesConfigRack" alignment="TOP_CENTER" disable="true" mnemonicParsing="false" opacity="0.7" styleClass="buttonStyleRackContainer">
+               <graphic>
+                  <AnchorPane>
+                     <children>
+                        <Label fx:id="labelButtonPSRW300PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" textFill="#005699" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imageButtonPSRW300PropertiesConfigRack" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="labelInputPSRW300PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelOutputPSRW300PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+            </Button>
+            <Button fx:id="buttonSlot01PropertiesConfigRack" alignment="TOP_CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;slot01PropertiesConfigRack&quot;)" opacity="0.7" styleClass="buttonStyleRackContainer">
+               <graphic>
+                  <AnchorPane>
+                     <children>
+                        <Label fx:id="labelButtonSlot01PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" textFill="#005699" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imageButtonSlot01PropertiesConfigRack" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="labelInputSlot01PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelOutputSlot01PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="buttonSlot02PropertiesConfigRack" alignment="TOP_CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;slot02PropertiesConfigRack&quot;)" opacity="0.7" styleClass="buttonStyleRackContainer">
+               <graphic>
+                  <AnchorPane>
+                     <children>
+                        <Label fx:id="labelButtonSlot02PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" textFill="#005699" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imageButtonSlot02PropertiesConfigRack" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="labelInputSlot02PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelOutputSlot02PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="buttonSlot03PropertiesConfigRack" alignment="TOP_CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;slot03PropertiesConfigRack&quot;)" opacity="0.7" styleClass="buttonStyleRackContainer">
+               <graphic>
+                  <AnchorPane>
+                     <children>
+                        <Label fx:id="labelButtonSlot03PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" textFill="#005699" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imageButtonSlot03PropertiesConfigRack" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="labelInputSlot03PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelOutputSlot03PropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Tahoma Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="buttonSaveConfigRack" mnemonicParsing="false" onAction="call(event,&quot;saveConfigRack&quot;)">
+               <graphic>
+                  <Label fx:id="labelButtonSaveConfigRack" alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Button>
+            <Button fx:id="buttonCancelConfigRack" mnemonicParsing="false" onAction="call(event,&quot;cancelConfigRack&quot;)">
+               <graphic>
+                  <Label fx:id="labelButtonCancelConfigRack" alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Button>
+            <AnchorPane fx:id="propertiesRackContainer" disable="true" opacity="0.0" style="-fx-background-color: white;">
+               <children>
+                  <Label fx:id="labelPropertiesConfigRack" alignment="CENTER" textFill="#005699" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Tahoma Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="buttonLeftPropertiesConfigRack" mnemonicParsing="false" onAction="call(event,&quot;setLeftButtonPropertiesConfigRack&quot;)" styleClass="buttonStyleRackContainer" AnchorPane.leftAnchor="0.0">
+                     <graphic>
+                        <ImageView fx:id="imageLeftPropertiesConfigRack" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="buttonPropertiesConfigRack" alignment="TOP_CENTER" mnemonicParsing="false" styleClass="buttonStyleRackContainer">
+                     <graphic>
+                        <AnchorPane>
+                           <children>
+                              <Label fx:id="labelButtonPropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" textFill="#005699" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="imageButtonPropertiesConfigRack" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelInputPropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelOutputPropertiesConfigRack" alignment="CENTER" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="buttonRightPropertiesConfigRack" mnemonicParsing="false" onAction="call(event,&quot;setRightButtonPropertiesConfigRack&quot;)" styleClass="buttonStyleRackContainer" AnchorPane.rightAnchor="0.0">
+                     <graphic>
+                        <ImageView fx:id="imageRightPropertiesConfigRack" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="buttonSavePropertiesConfigRack" mnemonicParsing="false" onAction="call(event,&quot;savePropertiesConfigRack&quot;)">
+                     <graphic>
+                        <Label fx:id="labelButtonSavePropertiesConfigRack" alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="inputContainer" disable="true" opacity="0.0" style="-fx-background-color: linear-gradient(#ffffff, #6095BF);">
+         <children>
+            <ScrollPane fx:id="ScrollPaneInputContainer" hbarPolicy="NEVER" hvalue="0.5" pannable="true" vbarPolicy="NEVER" vvalue="0.5">
+               <content>
+                  <AnchorPane fx:id="workSpaceInput" scaleX="0.7" scaleY="0.7">
+                     <children>
+                        <Button fx:id="blockInputIN01" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN01Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN01" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN01" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN01" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN01" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN01" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN01" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN01" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN01" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN01" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN01" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN02" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN02Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN02" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN02" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN02" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN02" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN02" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN02" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN02" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN02" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN02" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN02" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN03" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN03Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN03" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN03" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN03" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN03" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN03" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN03" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN03" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN03" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN03" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN03" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN04" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN04Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN04" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN04" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN04" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN04" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN04" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN04" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN04" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN04" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN04" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN04" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN05" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN05Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN05" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN05" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN05" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN05" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN05" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN05" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN05" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN05" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN05" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN05" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN06" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN06Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN06" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN06" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN06" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN06" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN06" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN06" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN06" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN06" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN06" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN06" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN07" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN07Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN07" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN07" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN07" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN07" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN07" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN07" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN07" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN07" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN07" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN07" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN08" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN08Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN08" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN08" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN08" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN08" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN08" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN08" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN08" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN08" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN08" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN08" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN09" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN09Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN09" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN09" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN09" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN09" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN09" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN09" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN09" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN09" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN09" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN09" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN10" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN10Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN10" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN10" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN10" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN10" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN10" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN10" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN10" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN10" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN10" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN11" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN11Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN11" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN11" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN11" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN11" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN11" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN11" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN11" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN11" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN11" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN12" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN12Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN12" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN12" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN12" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN12" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN12" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN12" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN12" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN12" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN12" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN12" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN13" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN13Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN13" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN13" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN13" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN13" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN13" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN13" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN13" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN13" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN13" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN13" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN14" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN14Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN14" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN14" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN14" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN14" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN14" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN14" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN14" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN14" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN14" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN14" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN15" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN15Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN15" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN15" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN15" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN15" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN15" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN15" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN15" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN15" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN15" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN15" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN16" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN16Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN16" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN16" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN16" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN16" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN16" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN16" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN16" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN16" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN16" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN16" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN17" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN17Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN17" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN17" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN17" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN17" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN17" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN17" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN17" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN17" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN17" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN17" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN18" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN18Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN18" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN18" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN18" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN18" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN18" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN18" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN18" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN18" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN18" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN18" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN19" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN19Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN19" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN19" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN19" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN19" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN19" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN19" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN19" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN19" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN19" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN19" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN20" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN20Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN20" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN20" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN20" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN20" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN20" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN20" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN20" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN20" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN20" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN20" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN21" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN21Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN21" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN21" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN21" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN21" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN21" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN21" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN21" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN21" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN21" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN21" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN22" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN22Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN22" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN22" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN22" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN22" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN22" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN22" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN22" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN22" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN22" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN22" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN23" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN23Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN23" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN23" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN23" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN23" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN23" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN23" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN23" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN23" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN23" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN23" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="blockInputIN24" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="call(event,&quot;blockInputIN24Action&quot;)" opacity="0.0" styleClass="blockInput">
+                           <graphic>
+                              <AnchorPane fx:id="anchorPaneIN24" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+                                 <children>
+                                    <Label fx:id="labelBlockInputIN24" alignment="CENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageBlockInputIN24" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="labelInput01BlockInputIN24" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput02BlockInputIN24" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput03BlockInputIN24" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelInput04BlockInputIN24" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelOutputBlockInputIN24" alignment="CENTER_RIGHT" prefHeight="12.0" prefWidth="25.0" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyBlockInputIN24" alignment="CENTER_RIGHT" layoutX="10.0" opacity="0.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelFrequencyValueBlockInputIN24" layoutX="62.0" prefWidth="50.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial" size="9.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <AnchorPane fx:id="siderBarLeftConfigInput" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="inputConcurrencyControl" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;inputConcurrencyControlAction&quot;)" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="imageInputConcurrencyControl" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="inputZeroSpeed" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;inputZeroSpeedAction&quot;)" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="imageInputZeroSpeed" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="inputMaxSpeed" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;inputMaxSpeedAction&quot;)" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="imageInputMaxSpeed" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="inputLightCurtain" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;inputLightCurtainAction&quot;)" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="imageInputLightCurtain" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="inputButtonEmergency" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;inputButtonEmergencyAction&quot;)" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="imageInputButtonEmergency" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="inputSingleChannelSensor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;inputSingleChannelSensorAction&quot;)" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="imageInputSingleChannelSensor" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="buttonSaveConfigInput" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;saveConfigInput&quot;)" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="imageButtonSaveConfigInput" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="buttonCancelConfigInput" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;cancelConfigInput&quot;)" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="imageButtonCancelConfigInput" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="showSiderBarLeftConfigInput" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;showSiderBarLeft&quot;)" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="imageControlSiderBarLeftInput" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Label fx:id="labelConfigInput" alignment="CENTER" textFill="#005699" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Tahoma Bold" size="23.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="propertiesInputContainer" opacity="0.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="labelPropertiesConfigInput" alignment="CENTER" textFill="#005699" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Tahoma Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="internalPropertiesInput">
+                     <children>
+                        <AnchorPane fx:id="paneMaxSpeedPropertiesInput" disable="true" opacity="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <children>
+                              <Label fx:id="labelPaneMaxSpeedProperties" prefWidth="120.0" AnchorPane.leftAnchor="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="textFieldPaneMaxSpeedProperties" alignment="CENTER" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="140.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="Hz" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="paneMinSpeedPropertiesInput" disable="true" opacity="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <children>
+                              <Label fx:id="labelPaneMinSpeedProperties" prefWidth="120.0" AnchorPane.leftAnchor="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="comboBoxPaneMinSpeedProperties" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="140.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="paneDebouncePropertiesInput" disable="true" opacity="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <children>
+                              <Label fx:id="labelPaneDebounceProperties" prefWidth="120.0" AnchorPane.leftAnchor="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="comboBoxPaneDebounceProperties" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="140.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="paneConcurrencyFilterPropertiesInput" disable="true" opacity="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <children>
+                              <Label fx:id="labelPaneConcurrencyFilterProperties" prefWidth="200.0" AnchorPane.leftAnchor="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="comboBoxPaneConcurrencyFilterProperties" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="220.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="paneRearmamentPropertiesInput" disable="true" opacity="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <children>
+                              <Label fx:id="labelPaneRearmamentProperties" prefWidth="120.0" AnchorPane.leftAnchor="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="comboBoxPaneRearmamentProperties" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="140.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="paneInputsPropertiesInput" disable="true" opacity="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <children>
+                              <Label fx:id="labelPaneInputsProperties" prefWidth="120.0" AnchorPane.leftAnchor="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="comboBoxPaneInputsProperties" prefWidth="200.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="140.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="deleteBlockInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;deleteBlockInput&quot;)" prefHeight="45.0" prefWidth="45.0" styleClass="buttonStyleHeaderContainer">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../config_PSRW300%20-%20Copia%20(2)/images/propertiesContainer/deleteIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text=":TOOLTIP_BUTTON_DELETE_PROPERTIES_INPUT_PSRW300" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="buttonSavePropertiesInput" mnemonicParsing="false" onAction="call(event,&quot;savePropertiesBlockInput&quot;)">
+                     <graphic>
+                        <Label fx:id="labelButtonSavePropertiesInput" alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="buttonCancelPropertiesInput" mnemonicParsing="false" onAction="call(event,&quot;cancelPropertiesBlockInput&quot;)">
+                     <graphic>
+                        <Label fx:id="labelButtonCancelPropertiesInput" alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button fx:id="inputDisableOptions" alignment="CENTER_RIGHT" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="call(event,&quot;inputControlAction&quot;)" opacity="0.0" style="-fx-background-color: transparent;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="imageInputDisableOptions" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
